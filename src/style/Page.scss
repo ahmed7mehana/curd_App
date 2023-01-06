@@ -1,0 +1,74 @@
+@use './color//Colors.scss'  as *;
+@use'./mixins//Mixins.scss' as *;
+
+* {
+    box-sizing: border-box;
+  }
+
+body{
+    background-color: $dark_blue;
+}
+  .Form{
+@include center(30%,50%);
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+align-items: flex-start;
+ p{
+    font-size: large;
+    font-weight: 900;
+    color:$midum_blue;
+ }
+  }
+  .posts{
+    @include center(50% , 0);
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    .item{
+        width: auto;
+    background: $ligt_blue;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    h2{
+        font-family: emoji;
+    }
+    p{
+        font-family: system-ui;
+    }
+    }
+    .updata{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    }
+      
+
+button{
+    padding: 6px 28px 6px 28px;
+    border: none;
+    border-radius: 6px;
+    margin: 5px;
+    background-color: $midum_blue;
+    color: $dark_blue;
+    cursor: pointer;
+    font-weight: 900;
+    transition: all 0.4s;
+    &:hover{
+        @include box_shadow(5px, 5px, 5px, $yellow) 
+    }
+}
+input{
+    border: none;
+    border-radius: 5px;
+    padding: 12px 11px 11px 11px;
+    margin: 9px;
+    transition: all 0.4s;
+    &:hover{
+        @include box_shadow(5px, 5px, 5px, $ligt_blue) 
+    }
+}

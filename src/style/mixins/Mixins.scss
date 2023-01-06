@@ -1,0 +1,31 @@
+@mixin center($top,$hight){
+    position: absolute;
+    top: $top;
+    left: 50%;
+    transform: translate(-50%, -$hight);
+}
+
+@mixin box_shadow($x-axis: 0, $y-axis: 1px, $blur: 2px, $color: $default) {
+    box-shadow: $x-axis $y-axis $blur $color;
+  }
+
+@mixin breakpoints($point) {
+    @if $point == mobile {
+      @media (max-width: 767px) {
+        @content;
+      }
+    } @else if $point == small {
+      @media (min-width: 768px) and (max-width: 991px) {
+        @content;
+      }
+    } @else if $point == medium {
+      @media (min-width: 992px) and (max-width: 1199px) {
+        @content;
+      }
+    } @else if $point == large {
+      @media (min-width: 1200px) {
+        @content;
+      }
+    }
+  }  
+  
